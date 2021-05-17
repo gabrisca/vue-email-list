@@ -4,12 +4,15 @@
 const app = new Vue({
   el: "#app",
   data: {
+    // array nel quale fare il push delle mail
     arrayMail: [],
+    // salvo in endpoint l'url
     endpoint: "https://flynn.boolean.careers/exercises/api/random/mail",
   },
   mounted() {
     // option 1
 
+    // ciclo for
     // for (let i = 0; i < 10; i++) {
     //   axios
     //     .get(this.endpoint)
@@ -24,6 +27,7 @@ const app = new Vue({
 
     // option 2 fucntion
 
+    // richiamo l'endpoint
     this.callApi(this.endpoint);
   },
   methods: {
@@ -39,6 +43,7 @@ const app = new Vue({
         .catch((error) => {
           console.log(error);
         });
+       console.log(this.arrayMail);
     },
     // option 3: funzione con ciclo while
     callApi2(url) {

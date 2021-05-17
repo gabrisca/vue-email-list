@@ -10,13 +10,16 @@
   </head>
   <body>
     <div id="app">
-      <ul>
+      <ol>
+        <!-- nel v-if imposto la condizione per visualizzare le mail solo se (quando) la lunghezza dell'array che le contiene è pari a 10  -->
+        <!-- nel v-for ciclo le mail dell'arrayMail -->
         <li 
+          v-if="arrayMail.length === 10"
           v-for="(mail, index) in arrayMail"
         >
-        {{index}} - {{mail}}
+      {{ mail }}
       </li>
-      </ul>
+      </ol>
     </div>
 
     <!-- axios -->
