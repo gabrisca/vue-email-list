@@ -5,18 +5,41 @@ const app = new Vue({
   el: "#app",
   data: {
     arrayMail: [],
+    endpoint: "https://flynn.boolean.careers/exercises/api/random/mail",
   },
   mounted() {
-    for (let i = 0; i < 10; i++) {
-      axios
-        .get("https://flynn.boolean.careers/exercises/api/random/mail")
+    // option 1
+
+    // for (let i = 0; i < 10; i++) {
+    //   axios
+    //     .get(this.endpoint)
+    //     .then((risp) => {
+    //       this.arrayMail.push(risp.data.response);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // }
+    // console.log(this.arrayMail);
+
+    // option 2 fucntion
+
+    this.callApi(this.endpoint)
+    
+  },
+  methods: {
+    callApi(url){
+         axios
+        .get(url)
         .then((risp) => {
           this.arrayMail.push(risp.data.response);
+          if(this.arrayMail.length < 10){
+            this.callApi(url)
+          }
         })
         .catch((error) => {
           console.log(error);
         });
     }
   },
-  methods: {},
 });
