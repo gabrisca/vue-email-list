@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  height: 100px;
+}
+
+#email > i{
+  color: chartreuse;
+}
+
+#email > h1{
+  margin-left: 20px;
+  color: rgb(253, 253, 253);
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+main ol {
+  list-style: decimal-leading-zero;
+}
+
+main > ol li {
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 5px;
+}
+
+main > ol li:nth-child(odd) {
+  background-color: rgba(142, 142, 206, 0.349);
+}
+
+main > ol li a {
+  text-decoration: none;
+  color: black;
+}
+
+main > ol li a:hover {
+  text-decoration: underline;
+  color: rgba(255, 72, 0, 0.678);
+}

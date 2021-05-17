@@ -8,6 +8,8 @@ const app = new Vue({
     arrayMail: [],
     // salvo in endpoint l'url
     endpoint: "https://flynn.boolean.careers/exercises/api/random/mail",
+    // flag show ol
+    show: true,
   },
   mounted() {
     // option 1
@@ -59,6 +61,6 @@ const app = new Vue({
           });
           i++
       }
-    },
+    }
   },
 });
