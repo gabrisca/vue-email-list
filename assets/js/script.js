@@ -24,22 +24,36 @@ const app = new Vue({
 
     // option 2 fucntion
 
-    this.callApi(this.endpoint)
-    
+    this.callApi(this.endpoint);
   },
   methods: {
-    callApi(url){
-         axios
+    callApi(url) {
+      axios
         .get(url)
         .then((risp) => {
           this.arrayMail.push(risp.data.response);
-          if(this.arrayMail.length < 10){
-            this.callApi(url)
+          if (this.arrayMail.length < 10) {
+            this.callApi(url);
           }
         })
         .catch((error) => {
           console.log(error);
         });
-    }
+    },
+    // option 3: funzione con ciclo while
+    callApi2(url) {
+      let i = 0;
+      while(i < 10){
+        axios
+          .get(url)
+          .then((risp) => {
+            this.arrayMail.push(risp.data.response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+          i++
+      }
+    },
   },
 });
